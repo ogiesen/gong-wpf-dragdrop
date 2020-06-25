@@ -333,16 +333,16 @@ namespace GongSolutions.Wpf.DragDrop
             // If the sender is a list box that allows multiple selections, ensure that clicking on an 
             // already selected item does not change the selection, otherwise dragging multiple items 
             // is made impossible.
-            var itemsControl = sender as ItemsControl;
-            if ((Keyboard.Modifiers & ModifierKeys.Shift) == 0 && (Keyboard.Modifiers & ModifierKeys.Control) == 0 && dragInfo.VisualSourceItem != null && itemsControl != null && itemsControl.CanSelectMultipleItems())
-            {
-                var selectedItems = itemsControl.GetSelectedItems().OfType<object>().ToList();
-                if (selectedItems.Count > 1 && selectedItems.Contains(dragInfo.SourceItem))
-                {
-                    m_ClickSupressItem = dragInfo.SourceItem;
-                    e.Handled = true;
-                }
-            }
+            //var itemsControl = sender as ItemsControl;
+            //if ((Keyboard.Modifiers & ModifierKeys.Shift) == 0 && (Keyboard.Modifiers & ModifierKeys.Control) == 0 && dragInfo.VisualSourceItem != null && itemsControl != null && itemsControl.CanSelectMultipleItems())
+            //{
+            //    var selectedItems = itemsControl.GetSelectedItems().OfType<object>().ToList();
+            //    if (selectedItems.Count > 1 && selectedItems.Contains(dragInfo.SourceItem))
+            //    {
+            //        m_ClickSupressItem = dragInfo.SourceItem;
+            //        e.Handled = true;
+            //    }
+            //}
 
             m_DragInfo = dragInfo;
         }
